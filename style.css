@@ -1,0 +1,69 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+canvas {
+  display: block;
+  border: 1px solid black;
+}
+
+input {
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font: inherit;
+  width: 100%;
+  height: 15vh;
+  font-size: 4em;
+  text-align: center;
+}
+
+.btm {
+  width: 100%;
+  display: flex;
+}
+
+.buttons {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sym {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  cursor: default;
+}
+
+.sym:hover {
+  background-color: lightgreen;
+}
+
+#error {
+  color: red;
+  font-size: 1.5em;
+  border: 1px solid black;
+  width: 90%;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  background-color: pink;
+  height: 14vh;
+}
+
+#error span {
+  color: black;
+}
