@@ -59,8 +59,8 @@ function inputChanged() {
   input = input
     .replace(/v/g, "∪")
     .replace(/\^/g, "∩")
-    .replace(/0/g, "φ")
-    .toUpperCase();
+    .toUpperCase()
+    .replace(/0/g, "φ");
   input = [...input].map((x) => (!allowedChars.includes(x) ? "" : x)).join("");
   select("input").value(input);
   if (input.length == 0) {
