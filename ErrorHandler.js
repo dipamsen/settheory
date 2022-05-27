@@ -7,21 +7,24 @@ const Errors = {
 
 const ErrorHandler = {
   UNEXPECTED_CHARACTER({ code, message, char, pos }) {
-    const highlightTxt = select("input")
+    const highlightTxt = inputBox
       .value()
       .split("")
       .map((x, i) => (i === pos ? `<mark>${x}</mark>` : x))
       .join("");
-    setError(message + "<br><span>" + highlightTxt + "</span>");
+    setError(message);
+
+    // setError(message + "<br><span>" + highlightTxt + "</span>");
   },
   UNEXPECTED_END({ code, message, pos }) {
     setError(message);
   },
   EXPECTED_CHARACTER({ code, message, char, pos }) {
-    const highlightTxt = select("input").value().split();
+    const highlightTxt = inputBox.value().split();
     highlightTxt.splice(pos, 0, `<mark>${char}</mark>`);
+    setError(message);
 
-    setError(message + "<br><span>" + highlightTxt.join("") + "</span>");
+    // setError(message + "<br><span>" + highlightTxt.join("") + "</span>");
   },
 };
 

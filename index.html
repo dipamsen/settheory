@@ -12,14 +12,26 @@
   <body>
     <main>
       <div id="app"></div>
-
-      <input type="text" id="input" onblur="this.focus()" autofocus />
+      <form autocomplete="off" onsubmit="createOutput(); return false">
+        <input type="text"  id="input" placeholder="Type here (A'∩B)" />
+      </form>
       <div class="btm">
         <div id="error"></div>
-        <div class="buttons">
+        <!-- <div class="buttons">
           <div class="sym">∪</div>
           <div class="sym">∩</div>
+        </div> -->
+        <div class="buttons">
+          <button class="sym" onclick="createOutput()">→</button>
+          <button class="sym" onclick="select('#input').value('')">X</button>
         </div>
+      </div>
+      <div class="info">
+        Use the following keys to type symbols<br>
+        <key>v</key> - ∪<br>
+        <key>^</key> - ∩<br>
+        <key>0</key> - φ<br>
+        ', (, )
       </div>
     </main>
     <script src="Set.js"></script>

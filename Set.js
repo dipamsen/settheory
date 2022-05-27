@@ -44,13 +44,6 @@ M.Set = class Set {
     noFill();
     stroke(255);
     circle(0, 0, this.sz * 2);
-    pop();
-  }
-  drawOverlay() {
-    if (this.x === undefined || this.y === undefined || this.sz === undefined)
-      return;
-    push();
-    translate(this.x, this.y);
     fill(255);
     noStroke();
     textSize(20);
@@ -60,22 +53,21 @@ M.Set = class Set {
 };
 
 M.UniversalSet = class UniversalSet extends M.Set {
+  mar = 10
   includes(x, y) {
-    return x < width - 20 && y < height - 20 && x > 20 && y > 20;
+    return x < width - this.mar && y < height - this.mar && x > this.mar && y > this.mar;
   }
   draw() {
     push();
     noFill();
     stroke(255);
-    rect(20, 20, width - 40, height - 40);
+    rect(this.mar, this.mar, width - this.mar*2, height - this.mar*2);
     pop();
-  }
-  drawOverlay() {
     push();
     fill(255);
     noStroke();
     textSize(20);
-    text("U", 35, 35);
+    text("U", this.mar + 15, this.mar +15);
     pop();
   }
 };
